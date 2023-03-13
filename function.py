@@ -1,4 +1,6 @@
 import sys
+import os
+
 from coins import USD, ILS, EUR
 
 
@@ -20,6 +22,7 @@ def yes_or_no(continue_yn, result):
             file_result.write(f"{i}\n")
         print(result)
         print("thank you")
+        os.startfile("C:\\Users\\Refael\\Desktop\\result.txt")  # open the file using the default application
         sys.exit()
     else:
         print("Invalid choice. Please enter y or n.")
