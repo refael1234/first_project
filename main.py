@@ -4,4 +4,3 @@ results = []
 
 print("Welcome to currency converter")
 choice = start_over(results)
-

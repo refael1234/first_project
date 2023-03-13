@@ -1,3 +1,1 @@
-1.0 dollars = 3.52 shekels
-2.0 shekels = 0.56 dollars
-3.0 euro = 12.690000000000001 shekels
+
