@@ -3,6 +3,23 @@ import os
 
 from coins import USD, ILS, EUR
 
+class Resulta:
+    def __init__(self, value, flow):
+        self.value = value
+        self.flow = flow
+
+    def convert_and_store(value, flow, results_list):
+        result = Resulta(value, flow)
+        if flow == '1':
+             new = f"{USD.calculate(value)}+','+ 'USD to ILS'"
+        if flow == '2':
+             new = f"{ILS.calculate(value)}+','+ 'ILS to USD'"
+        if flow == '3':
+             new = f"{EUR.calculate(value)}+','+ 'EURO to ILS'"
+        results_list.append(new)
+
+
+
 
 def start_over(results):
     print("Please choose an option (1/2/3):")
@@ -37,7 +54,7 @@ def get_user_value(user_choice, result):
             print("write a number big then 0")
             get_user_value(user_choice, result)
         usd = USD()
-        result.append(f"{dollars} dollars = {usd.calculate(dollars)} shekels")
+        result.append(f"{USD.calculate(dollars)}+','+ 'USD to ILS'")
         print(f"{dollars} dollars = {usd.calculate(dollars)} shekels")
         x = input('choose y to start over or n to get out')
         yes_or_no(x, result)
@@ -47,7 +64,7 @@ def get_user_value(user_choice, result):
             print("write a number big then 0")
             get_user_value(user_choice, result)
         ils = ILS()
-        result.append(f"{shekels} shekels = {ils.calculate(shekels)} dollars")
+        result.append(f"{ILS.calculate(shekels)}+','+ 'ILS to USD'")
         print(f"{shekels} shekels = {ils.calculate(shekels)} dollars")
         x = input('choose y to start over or n to get out')
         yes_or_no(x, result)
@@ -57,7 +74,7 @@ def get_user_value(user_choice, result):
             print("write a number big then 0")
             get_user_value(user_choice, result)
         eur = EUR()
-        result.append(f"{euro} euro = {eur.calculate(euro)} shekels")
+        result.append(f"{EUR.calculate(euro)}+','+ 'EURO to ILS'")
         print(f"{euro} euro = {eur.calculate(euro)} shekels")
         x = input('choose y to start over or n to get out')
         yes_or_no(x, result)
