@@ -3,6 +3,7 @@ import os
 
 from coins import USD, ILS, EUR
 
+# The class receives 2 variables of what to convert and how much to convert and stores values inside the list
 class Resulta:
     def __init__(self, value, flow):
         self.value = value
@@ -20,7 +21,7 @@ class Resulta:
 
 
 
-
+# The opening screen and input value
 def start_over(results):
     print("Please choose an option (1/2/3):")
     print("1. Dollars to Shekels")
@@ -30,9 +31,12 @@ def start_over(results):
     choice = input("Enter your choice (1/2/3): ")
     get_user_value(choice, results)
 
+# Choosing whether to continue or not
 def yes_or_no(continue_yn, result):
+# If so we will return to the beginning of the program
     if continue_yn == "y":
         start_over(result)
+# If not then we will print values and exit the program
     elif continue_yn == "n":
         file_result = open('C:\\Users\\Refael\\Desktop\\result.txt', 'w')
         for i in result:
@@ -46,7 +50,7 @@ def yes_or_no(continue_yn, result):
         x = input('choose y to start over or n to get out')
         yes_or_no(x, result)
 
-
+# We will check what the selected number is and according to it we will convert the money
 def get_user_value(user_choice, result):
     if user_choice == '1':
         dollars = float(input('please enters an amount to convert'))

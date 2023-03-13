@@ -1,6 +1,8 @@
 import pytest
 from function import get_user_value
 from coins import USD, ILS, EUR
+
+# Test 1: inserting a number
 def test_convert_value():
   x = USD()
   m = x.calculate(1)
